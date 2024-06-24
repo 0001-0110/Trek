@@ -3,10 +3,12 @@ WORKDIR /app
 # Copy project files
 COPY Trek.sln ./
 COPY Trek/Trek.csproj ./Trek/
+COPY Graphium/Graphium/Graphium.csproj ./Graphium/Graphium/
 # Restore dependencies
 RUN dotnet restore
 # Copy everything
 COPY Trek/ ./Trek/
+COPY Graphium/Graphium/ ./Graphium/Graphium/
 # Build and publish a release
 RUN dotnet publish -c Release -o out
 
