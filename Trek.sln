@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trek", "Trek\Trek.csproj", "{BE794FD3-7FAA-44BB-AFEA-54FCE2413891}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trek", "Trek\Trek.csproj", "{BE794FD3-7FAA-44BB-AFEA-54FCE2413891}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graphium", "Graphium\Graphium\Graphium.csproj", "{606CE8C0-4745-42EE-B3B2-50EBD1EEAF42}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BE794FD3-7FAA-44BB-AFEA-54FCE2413891}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE794FD3-7FAA-44BB-AFEA-54FCE2413891}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE794FD3-7FAA-44BB-AFEA-54FCE2413891}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606CE8C0-4745-42EE-B3B2-50EBD1EEAF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606CE8C0-4745-42EE-B3B2-50EBD1EEAF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606CE8C0-4745-42EE-B3B2-50EBD1EEAF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606CE8C0-4745-42EE-B3B2-50EBD1EEAF42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
