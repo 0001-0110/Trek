@@ -1,8 +1,11 @@
+using Graphium;
 
 namespace Trek
 {
 	public class Program
 	{
+		DirectedGraph graph = new DirectedGraph();
+
 		public static void Main(string[] args)
 		{
 			var builder = WebApplication.CreateBuilder(args);
