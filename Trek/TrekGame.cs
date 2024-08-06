@@ -1,4 +1,5 @@
 using Trek.Entities;
+using Trek.Runners;
 using Trek.Story;
 using static Trek.Story.StoryGraph;
 
@@ -6,29 +7,31 @@ namespace Trek
 {
     public class TrekGame
     {
-        public static TrekGame Load(string path)
+        public static TrekGame Load(IRunner runner, string path)
         {
-            return TrekLoader.Load(path);
+            return new TrekGame(runner, new StoryLoader().Load(path));
         }
 
         private readonly StoryGraph _story;
+        private readonly IRunner _runner;
 
-        internal TrekGame(StoryGraph story)
+        internal TrekGame(IRunner runner, StoryGraph story)
         {
             _story = story;
+            _runner = runner;
         }
 
         private Location GetRandomSpawnLocation()
         {
             // TODO
-            return new Location("Spawn", "This is a test");
+            return _story.Vertices.First();
         }
 
         public string Join(string name, out Player player)
         {
             // If location is null, the player will spawn on any suitable spwan location
             player = new Player(name, GetRandomSpawnLocation());
-            return player.CurrentPosition.ToString();
+            return GetStatus(player);
         }
 
         public Player Join(string name, Location location)
@@ -36,9 +39,14 @@ namespace Trek
             return new Player(name, location);
         }
 
+        public string GetStatus(Player player)
+        {
+            return _runner.GetStatus(player);
+        }
+
         public string ExecuteAction(Player player, string input)
         {
-            throw new NotImplementedException();
+            return _runner.Execute(player, input);
         }
     }
 }

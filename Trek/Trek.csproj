@@ -10,4 +10,8 @@
     <ProjectReference Include="../Graphium/Graphium/Graphium.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="YamlDotNet" Version="16.0.0" />
+  </ItemGroup>
+
 </Project>

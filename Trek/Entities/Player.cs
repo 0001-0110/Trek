@@ -1,10 +1,10 @@
 using Graphium;
 using static Trek.Story.StoryGraph;
-using Action = Trek.Story.StoryGraph.Action;
+using Choice = Trek.Story.StoryGraph.Choice;
 
 namespace Trek.Entities
 {
-    public class Player : GraphVisitor<Location, Action>
+    public class Player : GraphVisitor<Location, Choice>
     {
         public string Name { get; }
 
@@ -16,15 +16,10 @@ namespace Trek.Entities
             Name = name;
         }
 
-        internal string ExecuteAction(Action action)
+        internal string ExecuteAction(Choice action)
         {
             Traverse(action);
             return action.Description;
-        }
-
-        public string GetStatus()
-        {
-            return CurrentPosition.ToString();
         }
     }
 }
