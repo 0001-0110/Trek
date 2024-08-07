@@ -40,9 +40,9 @@ namespace Trek.Story
 
         private void LoadDocument(YamlDocument document)
         {
-            var root = document.RootNode as YamlSequenceNode;
+            YamlMappingNode? root = document.RootNode as YamlMappingNode;
             // Get all nodes stored in this file and create them
-            foreach (YamlMappingNode location in root.Cast<YamlMappingNode>())
+            foreach (YamlMappingNode location in (root?["locations"] as YamlSequenceNode)?.Cast<YamlMappingNode>() ?? [])
             {
                 LoadLocation(location);
             }
